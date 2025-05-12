@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "bookId": 2,
+    "borrowedDate": "2025-05-12T10:36:49.790Z",
+    "dueDate": "2025-05-19T10:36:49.790Z",
+    "status": "borrowed",
+    "fine": 0
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "bookId": 1,
+    "borrowedDate": "2025-05-12T10:44:57.655Z",
+    "dueDate": "2025-05-19T10:44:57.655Z",
+    "status": "borrowed",
+    "fine": 0
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "bookId": 2,
+    "borrowedDate": "2025-05-12T10:44:57.655Z",
+    "dueDate": "2025-05-19T10:44:57.655Z",
+    "status": "borrowed",
+    "fine": 0
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "bookId": 3,
+    "borrowedDate": "2025-05-12T10:44:57.655Z",
+    "dueDate": "2025-05-19T10:44:57.655Z",
+    "status": "borrowed",
+    "fine": 0
+  }
+]

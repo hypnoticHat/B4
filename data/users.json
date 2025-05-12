@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "NguyenAnh",
+    "borrowedBooks": []
+  },
+  {
+    "id": 2,
+    "name": "Trần Thị B",
+    "email": "b@example.com",
+    "phone": "0987654321",
+    "borrowedBooks": []
+  },
+  {
+    "id": 3,
+    "name": "Lê Văn C",
+    "borrowedBooks": [
+      {
+        "bookId": 7,
+        "borrowedDate": "2025-04-28T08:30:00.000Z"
+      }
+    ]
+  }
+]

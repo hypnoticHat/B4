@@ -1,0 +1,191 @@
+[
+  {
+    "id": 1,
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt",
+    "publishedDate": "1999-10-30",
+    "category": "Programming",
+    "quantity": 5,
+    "available": 3
+  },
+  {
+    "id": 2,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "publishedDate": "2008-08-01",
+    "category": "Programming",
+    "quantity": 8,
+    "available": 8
+  },
+  {
+    "id": 3,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "publishedDate": "1960-07-11",
+    "category": "Fiction",
+    "quantity": 6,
+    "available": 5
+  },
+  {
+    "id": 4,
+    "title": "1984",
+    "author": "George Orwell",
+    "publishedDate": "1949-06-08",
+    "category": "Dystopian",
+    "quantity": 7,
+    "available": 4
+  },
+  {
+    "id": 5,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "publishedDate": "1925-04-10",
+    "category": "Classic",
+    "quantity": 10,
+    "available": 9
+  },
+  {
+    "id": 6,
+    "title": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "publishedDate": "2011-06-04",
+    "category": "History",
+    "quantity": 4,
+    "available": 2
+  },
+  {
+    "id": 7,
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "publishedDate": "1937-09-21",
+    "category": "Fantasy",
+    "quantity": 5,
+    "available": 5
+  },
+  {
+    "id": 8,
+    "title": "A Game of Thrones",
+    "author": "George R. R. Martin",
+    "publishedDate": "1996-08-06",
+    "category": "Fantasy",
+    "quantity": 6,
+    "available": 6
+  },
+  {
+    "id": 9,
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "publishedDate": "1951-07-16",
+    "category": "Fiction",
+    "quantity": 5,
+    "available": 3
+  },
+  {
+    "id": 10,
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "publishedDate": "2011-10-25",
+    "category": "Psychology",
+    "quantity": 3,
+    "available": 1
+  },
+  {
+    "id": 11,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "publishedDate": "1988-04-01",
+    "category": "Philosophy",
+    "quantity": 7,
+    "available": 5
+  },
+  {
+    "id": 12,
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "publishedDate": "2011-09-13",
+    "category": "Business",
+    "quantity": 4,
+    "available": 2
+  },
+  {
+    "id": 13,
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert T. Kiyosaki",
+    "publishedDate": "1997-04-01",
+    "category": "Finance",
+    "quantity": 8,
+    "available": 6
+  },
+  {
+    "id": 14,
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "publishedDate": "1954-07-29",
+    "category": "Fantasy",
+    "quantity": 5,
+    "available": 4
+  },
+  {
+    "id": 15,
+    "title": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "publishedDate": "2011-10-24",
+    "category": "Biography",
+    "quantity": 3,
+    "available": 3
+  },
+  {
+    "id": 16,
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "publishedDate": "2016-01-05",
+    "category": "Productivity",
+    "quantity": 4,
+    "available": 4
+  },
+  {
+    "id": 17,
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "publishedDate": "1997-06-26",
+    "category": "Fantasy",
+    "quantity": 10,
+    "available": 9
+  },
+  {
+    "id": 18,
+    "title": "The Power of Habit",
+    "author": "Charles Duhigg",
+    "publishedDate": "2012-02-28",
+    "category": "Psychology",
+    "quantity": 6,
+    "available": 6
+  },
+  {
+    "id": 19,
+    "title": "Zero to One",
+    "author": "Peter Thiel",
+    "publishedDate": "2014-09-16",
+    "category": "Startup",
+    "quantity": 5,
+    "available": 3
+  },
+  {
+    "id": 20,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "publishedDate": "2018-10-16",
+    "category": "Self-Help",
+    "quantity": 9,
+    "available": 8
+  },
+  {
+    "id": 21,
+    "title": "dế mèn du mục",
+    "author": "Nhớ Hoài",
+    "publishedDate": "1941 - 01-01",
+    "category": "thiếu Nhi",
+    "quantity": 10,
+    "available": 10
+  }
+]
