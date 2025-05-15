@@ -4,23 +4,22 @@ import { Book } from '../models/books';
 
 const dataPath = path.join(__dirname, '../data/books.json');
 
-async function listBooks() {
-    try{
-        const data = await fs.readFile(dataPath, 'utf-8');
-        const books: Book[] = JSON.parse(data);
+export async function listBooks() {
+  try {
+    const data = await fs.readFile(dataPath, 'utf-8');
+    const books: Book[] = JSON.parse(data);
 
-        if (books.length === 0) {
-            console.log('No books available.');
-            return;
-        }
-        console.log('List of books:');
-        books.forEach((book) => {
-            console.log(`ID: ${book.id}` + ` Tên: ${book.title}`);
-        }
-        );
-    } catch (error) {
-        console.error('Error reading books data:', error);
+    if (books.length === 0) {
+      console.log('❌ Không có sách nào trong thư viện.');
+      return;
     }
+
+    console.log('📚 Danh sách sách:');
+    books.forEach((book) => {
+      console.log(`ID: ${book.id} | Tên: ${book.title} | Số lượng còn lại: ${book.available}`);
+    });
+  } catch (error) {
+    console.error('❌ Lỗi khi đọc dữ liệu sách:', error);
+  }
 }
 
-listBooks().catch(console.error);

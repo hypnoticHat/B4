@@ -4,44 +4,40 @@ import { Book } from '../models/books';
 
 const booksFilePath = path.join(__dirname, '../data/books.json');
 
-async function addBook(){
-    const args = process.argv.slice(2);
-    if (args.length < 5) {
-        console.error('Please provide all required fields: title, author, publishedDate, category, quantity');
-        return;
-    }
-    const [title, author, publishedDate, category, quantityStr, availableStr] = args;
-    const quantity = parseInt(quantityStr, 10);
+export async function addBook(
+  title: string,
+  author: string,
+  publishedDate: string,
+  category: string,
+  quantity: number,
+  available?: number
+) {
+  if (quantity <= 0) {
+    console.log('❌ Số lượng phải là số nguyên dương');
+    return;
+  }
 
-    if (isNaN(quantity) || quantity <= 0) {
-        console.log('❌ Số lượng phải là một số nguyên dương');
-        return;
-      }
+  const availableFinal = available !== undefined ? available : quantity;
 
-    const available = availableStr !== undefined ? parseInt(availableStr, 10) : quantity;
+  if (availableFinal < 0 || availableFinal > quantity) {
+    console.log('❌ Số lượng còn sẵn không hợp lệ (0 đến quantity)');
+    return;
+  }
 
-    if (isNaN(available) || available < 0 || available > quantity) {
-        console.log('❌ Số lượng còn sẵn không hợp lệ (phải từ 0 đến quantity)');
-        return;
-      }
+  const data = await fs.readFile(booksFilePath, 'utf-8').catch(() => '[]');
+  const books: Book[] = JSON.parse(data.trim() || '[]');
 
-    const data = await fs.readFile(booksFilePath, 'utf-8');
-    const books: Book[] = JSON.parse(data);
+  const newBook: Book = {
+    id: books.length > 0 ? books[books.length - 1].id + 1 : 1,
+    title,
+    author,
+    publishedDate,
+    category,
+    quantity,
+    available: availableFinal,
+  };
 
-    const newBook: Book = {
-        id: books.length > 0 ? books[books.length - 1].id + 1 : 1,
-        title,
-        author,
-        publishedDate,
-        category,
-        quantity,
-        available,
-    };
-
-    books.push(newBook);
-    await fs.writeFile(booksFilePath, JSON.stringify(books, null, 2));
-    console.log(`Book added: ${JSON.stringify(newBook)}`);
-
+  books.push(newBook);
+  await fs.writeFile(booksFilePath, JSON.stringify(books, null, 2));
+  console.log(`✅ Book added: ${JSON.stringify(newBook)}`);
 }
-
-addBook().catch(console.error);

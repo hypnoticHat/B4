@@ -5,8 +5,9 @@
     "bookId": 2,
     "borrowedDate": "2025-05-12T10:36:49.790Z",
     "dueDate": "2025-05-19T10:36:49.790Z",
-    "status": "borrowed",
-    "fine": 0
+    "status": "returned",
+    "fine": 215000,
+    "returnDate": "2025-06-30T17:00:00.000Z"
   },
   {
     "id": 2,
@@ -14,8 +15,9 @@
     "bookId": 1,
     "borrowedDate": "2025-05-12T10:44:57.655Z",
     "dueDate": "2025-05-19T10:44:57.655Z",
-    "status": "borrowed",
-    "fine": 0
+    "status": "returned",
+    "fine": 0,
+    "returnDate": "2025-05-15T02:38:38.483Z"
   },
   {
     "id": 2,
@@ -32,6 +34,43 @@
     "bookId": 3,
     "borrowedDate": "2025-05-12T10:44:57.655Z",
     "dueDate": "2025-05-19T10:44:57.655Z",
+    "status": "returned",
+    "fine": 0,
+    "returnDate": "2025-05-15T02:05:37.761Z"
+  },
+  {
+    "id": 3,
+    "userId": 1,
+    "bookId": 1,
+    "borrowedDate": "2025-05-15T02:32:38.018Z",
+    "dueDate": "2025-05-22T02:32:38.018Z",
+    "status": "borrowed",
+    "fine": 0
+  },
+  {
+    "id": 3,
+    "userId": 1,
+    "bookId": 2,
+    "borrowedDate": "2025-05-15T02:32:38.018Z",
+    "dueDate": "2025-05-22T02:32:38.018Z",
+    "status": "borrowed",
+    "fine": 0
+  },
+  {
+    "id": 3,
+    "userId": 1,
+    "bookId": 3,
+    "borrowedDate": "2025-05-15T02:32:38.018Z",
+    "dueDate": "2025-05-22T02:32:38.018Z",
+    "status": "borrowed",
+    "fine": 0
+  },
+  {
+    "id": 4,
+    "userId": 5,
+    "bookId": 10,
+    "borrowedDate": "2025-05-15T02:34:20.911Z",
+    "dueDate": "2025-05-22T02:34:20.911Z",
     "status": "borrowed",
     "fine": 0
   }

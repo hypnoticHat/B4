@@ -4,7 +4,7 @@ import { User } from '../models/users';
 
 const dataPath = path.join(__dirname, '../data/users.json');
 
-async function listUsers() {
+export async function listUsers() {
   try {
     const data = await fs.readFile(dataPath, 'utf-8');
     const users: User[] = JSON.parse(data.trim() || '[]');
@@ -23,4 +23,3 @@ async function listUsers() {
   }
 }
 
-listUsers();

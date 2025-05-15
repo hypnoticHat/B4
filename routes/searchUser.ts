@@ -1,5 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
+import readline from 'readline';
 import { User } from '../models/users';
 import { BorrowedRecord } from '../models/borowedRecord';
 
@@ -14,29 +15,56 @@ async function countBooksBorrowed(userId: number): Promise<number> {
   return allRecords.filter(r => r.userId === userId && r.status === 'borrowed').length;
 }
 
-async function searchUser(key: UserSearchKey, value: string) {
+function ask(question: string): Promise<string> {
+  const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+  return new Promise(resolve => rl.question(question, ans => {
+    rl.close();
+    resolve(ans);
+  }));
+}
+
+export async function searchUser() {
+  console.log(`
+🔍 Tìm người dùng theo:
+1. ID
+2. Tên
+3. Email
+4. SĐT
+0. quay lại
+`);
+
+  const input = await ask('👉 Nhập lựa chọn (1-4): ');
+  let key: UserSearchKey;
+
+  switch (input.trim()) {
+    case '1': key = 'id'; break;
+    case '2': key = 'name'; break;
+    case '3': key = 'email'; break;
+    case '4': key = 'phone'; break;
+    case '0':
+        console.log('Quay lại menu chính');
+        return;
+    default:
+      console.log('❌ Lựa chọn không hợp lệ.');
+      return;
+  }
+
+  const value = await ask(`🔎 Nhập giá trị cần tìm theo ${key.toUpperCase()}: `);
+
   const data = await fs.readFile(usersPath, 'utf-8');
   const users: User[] = JSON.parse(data.trim() || '[]');
 
   let found: User[] = [];
 
-  switch (key) {
-    case 'id':
-      const id = Number(value);
-      if (!isNaN(id)) {
-        found = users.filter(user => user.id === id);
-      }
-      break;
-    case 'name':
-    case 'email':
-    case 'phone':
-      found = users.filter(user =>
-        (user[key] || '').toLowerCase().includes(value.toLowerCase())
-      );
-      break;
-    default:
-      console.log('❌ Trường tìm kiếm không hợp lệ.');
-      return;
+  if (key === 'id') {
+    const id = Number(value);
+    if (!isNaN(id)) {
+      found = users.filter(user => user.id === id);
+    }
+  } else {
+    found = users.filter(user =>
+      (user[key] || '').toLowerCase().includes(value.toLowerCase())
+    );
   }
 
   if (found.length === 0) {
@@ -53,13 +81,4 @@ async function searchUser(key: UserSearchKey, value: string) {
       console.log('---');
     }
   }
-}
-
-// --- CLI entry point ---
-const args = process.argv.slice(2);
-if (args.length < 2) {
-  console.log('📌 Cách dùng: npx ts-node routes/searchUser.ts <key> <value>');
-} else {
-  const [key, value] = args;
-  searchUser(key as UserSearchKey, value).catch(console.error);
 }
